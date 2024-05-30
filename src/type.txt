@@ -1,0 +1,2 @@
+1- npm i @mui/material @emotion/react @emotion/styled @emotion/cache stylis-plugi-rtl
+2- import {createTheme} from "@mui/material/styles"
