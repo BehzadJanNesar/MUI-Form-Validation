@@ -1,5 +1,10 @@
-import Layout from "../components/Layout";
+import { Box } from "@mui/material";
+import XDataGrid from "../components/xDataGrid";
 
 export default function HomePage() {
-   return <div>{<Layout />}</div>;
+   return (
+      <Box sx={{ height: 400, width: "100%" }}>
+         <XDataGrid />
+      </Box>
+   );
 }

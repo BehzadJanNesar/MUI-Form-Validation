@@ -1,20 +1,10 @@
-import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Paper, Stack, TextField, Typography } from "@mui/material";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
-import * as yup from "yup";
 
 interface FormData {
    email: string;
    password: string;
 }
-
-const validationSchema = yup.object({
-   email: yup.string().email("ایمیل وارد شده صحیح نمیباشد").required("این فیلد باید پر شود"),
-   password: yup
-      .string()
-      .matches(/[a-zA-Z0-9]{8,}/, "رمز عبور وارد شده صحیح نمیباشد")
-      .required("این فیلد باید پر شود!"),
-});
 
 export default function LoginForm_RHF() {
    const {
@@ -22,15 +12,35 @@ export default function LoginForm_RHF() {
       handleSubmit,
       formState: { errors, isValid },
    } = useForm<FormData>({
-      resolver: yupResolver(validationSchema),
       mode: "onBlur",
       defaultValues: {
          email: "",
          password: "",
       },
+      resolver: async (data) => {
+         console.log(data);
+         return {
+            values: data,
+            errors: {
+               email: !data.email
+                  ? "این فیلد باید پر شود"
+                  : !/^\S+@\S+\.\S+$/.test(data.email)
+                  ? "ایمیل وارد شده صحیح نمیباشد"
+                  : undefined,
+               password: !data.password
+                  ? "این فیلد باید پر شود"
+                  : !/^[a-zA-Z0-9]{8,}$/.test(data.password)
+                  ? "رمز عبور وارد شده صحیح نمیباشد"
+                  : undefined,
+            },
+         };
+      },
    });
+   console.log(control);
 
    const onSubmit: SubmitHandler<FormData> = (data) => console.log(data);
+
+   // console.log(errors);
 
    return (
       <Paper
@@ -50,14 +60,22 @@ export default function LoginForm_RHF() {
             <Controller
                name="email"
                control={control}
-               render={({ field }) => (
+               rules={{
+                  required: "این فیلد باید پر شود",
+                  pattern: {
+                     value: /^\S+@\S+\.\S+$/,
+                     message: "ایمیل وارد شده صحیح نمیباشد",
+                  },
+               }}
+               render={({ field, fieldState }) => (
                   <TextField
-                     {...field}
                      label="ایمیل"
+                     value={field.value}
                      type="email"
                      onBlur={field.onBlur}
-                     helperText={errors.email ? errors.email.message : null}
-                     error={!!errors.email}
+                     onChange={field.onChange}
+                     error={!!fieldState.error}
+                     helperText={fieldState.error?.message}
                   />
                )}
             />
@@ -66,12 +84,13 @@ export default function LoginForm_RHF() {
                control={control}
                render={({ field }) => (
                   <TextField
-                     {...field}
+                     autoComplete="false"
                      label="پسوورد"
                      type="password"
-                     onBlur={field.onBlur}
-                     helperText={errors.password ? errors.password.message : null}
+                     value={field.value}
+                     onChange={field.onChange}
                      error={!!errors.password}
+                     helperText={errors.password ? errors.password.message : undefined}
                   />
                )}
             />
