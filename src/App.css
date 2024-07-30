@@ -1,4 +1,11 @@
-.grid {
+/* .grid {
    display: grid;
    grid-template-columns: repeat(3, 1fr);
+} */
+@font-face {
+   font-family: dirooz;
+   src: url("font/Dirooz.ttf");
+}
+body {
+   font-family: "dirooz";
 }

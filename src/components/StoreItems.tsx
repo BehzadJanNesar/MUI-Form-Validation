@@ -34,16 +34,17 @@ export default function ItemStore({
    data2,
 }: ItemStoreProps) {
    return (
-      <Card sx={{ width: 320, mt: 3 }}>
+      <Card sx={{ width: 350, mt: 3, marginInline: "auto", padding: "10px" }}>
          <CardMedia
             component="img"
             width="140"
             height="150"
             image={img}
             alt="Bruce's Tire & Auto Service"
+            sx={{ borderRadius: "5px" }}
          />
-         <CardContent>
-            <Typography variant="h5" component="div">
+         <CardContent sx={{ padding: "16px 0" }}>
+            <Typography variant="h4" component="div">
                {title}
             </Typography>
             <Typography variant="body2" color="text.secondary">
@@ -62,7 +63,7 @@ export default function ItemStore({
                />
             </Box>
             <Grid container spacing={1} alignItems="center">
-               <Grid item>
+               <Grid sx={{ display: "flex", alignItems: "center" }} item>
                   <AccessTimeIcon color="action" />
                </Grid>
                <Grid item>
@@ -76,7 +77,7 @@ export default function ItemStore({
             </Typography>
             <Stack direction={"row-reverse"} spacing={1} sx={{ mt: 2 }}>
                <Button sx={{ flex: 9 }} variant="contained" color="primary" fullWidth>
-                  Check Availability
+                  بررسی در دسترس بودن
                </Button>
                <Button
                   sx={{ flex: 3 }}
@@ -84,7 +85,7 @@ export default function ItemStore({
                   color="primary"
                   startIcon={<PhoneIcon />}
                   fullWidth>
-                  Call
+                  تماس
                </Button>
             </Stack>
          </CardContent>

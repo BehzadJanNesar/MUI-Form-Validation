@@ -1,13 +1,14 @@
 import StoreItems from "../data/StroreItems.json";
 import ItemStore from "../components/StoreItems";
-import { Container, Stack } from "@mui/material";
+import { useMemo } from "react";
 
 export default function Store() {
+   const memo = useMemo(() => {
+      return StoreItems.map((item, index) => <ItemStore {...item} key={index} />);
+   }, [StoreItems.length]);
    return (
       <div className="grid" style={{ margin: "auto", width: "100%" }}>
-         {StoreItems.map((item, index) => (
-            <ItemStore {...item} key={index} />
-         ))}
+         {memo}
       </div>
    );
 }

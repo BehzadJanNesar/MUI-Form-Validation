@@ -10,7 +10,7 @@ const navbarItems: ObjectValue[] = [
       path: "./",
    },
    {
-      name: "فروشگاه",
+      name: "مکانیکی ها",
       path: "/store",
    },
    {

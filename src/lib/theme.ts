@@ -39,7 +39,7 @@ const theme = createTheme({
       borderRadius: 5,
    },
    typography: {
-      fontFamily: "tahoma",
+      fontFamily: "dirooz",
       h1: {
          fontWeight: 700,
          fontSize: "28px",
