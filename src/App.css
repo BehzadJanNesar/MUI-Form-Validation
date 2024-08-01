@@ -3,8 +3,8 @@
    grid-template-columns: repeat(3, 1fr);
 } */
 @font-face {
-   font-family: dirooz;
-   src: url("font/Dirooz.ttf");
+   font-family: yekanbakh;
+   src: url("Font/YekanBakhEnMedium.ttf");
 }
 body {
    font-family: "dirooz";

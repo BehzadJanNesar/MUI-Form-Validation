@@ -3,9 +3,22 @@
       "img": "https://storage.googleapis.com/rp-production-public-content/gze1tat24mqrk2d95mhvp2l8a1oq",
       "title": "سرویس تایر و خودرو لوکس",
       "subtitle": "تهران اتوبان بسیج ، تهرانپارس ، خیابان دماوند شمالی",
-      "label1": "اجاره ماشین",
-      "label2": "۲۴ هزار گارانتی",
-      "data1": "بسته است • در ساعت ۸ صبح روز دوشنبه باز میشود",
-      "data2": "زودترین دسترسی در بین ساعت ۸ تا ۱۰ صب"
+      "data1": "بسته است.شنبه از ساعت ۷ صبح",
+      "data2": "زودترین زمان در دسترس بودن ساعت ۸ صبح ۱۴ مهر",
+      "phone_number": "۰۹۱۲۴۳۲۹۰۹۴",
+      "rate": "۴.۳",
+      "repair_service": "تعویض دینام",
+      "price": "۲۵.۰۰۰"
+   },
+   {
+      "img": "https://storage.googleapis.com/rp-production-public-content/gze1tat24mqrk2d95mhvp2l8a1oq",
+      "title": "سرویس تایر و خودرو لوکس",
+      "subtitle": "تهران اتوبان بسیج ، تهرانپارس ، خیابان دماوند شمالی",
+      "data1": "بسته است.شنبه از ساعت ۷ صبح",
+      "data2": "زودترین زمان در دسترس بودن ساعت ۸ صبح ۱۴ مهر",
+      "phone_number": "۰۹۱۲۴۳۲۹۰۹۴",
+      "rate": "۴.۳",
+      "repair_service": "تعویض دینام",
+      "price": "۲۵.۰۰۰"
    }
 ]

@@ -34,12 +34,15 @@ const theme = createTheme({
          dark: "#168c48",
          contrastText: "#fff",
       },
+      yellow: {
+         main: "#F2B63C",
+      },
    },
    shape: {
       borderRadius: 5,
    },
    typography: {
-      fontFamily: "dirooz",
+      fontFamily: "yekanbakh",
       h1: {
          fontWeight: 700,
          fontSize: "28px",

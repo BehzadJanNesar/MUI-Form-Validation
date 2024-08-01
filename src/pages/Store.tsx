@@ -6,9 +6,5 @@ export default function Store() {
    const memo = useMemo(() => {
       return StoreItems.map((item, index) => <ItemStore {...item} key={index} />);
    }, [StoreItems.length]);
-   return (
-      <div className="grid" style={{ margin: "auto", width: "100%" }}>
-         {memo}
-      </div>
-   );
+   return <div style={{ margin: "auto", width: "100%" }}>{memo}</div>;
 }
