@@ -8,21 +8,55 @@ import Group from "../../Public/Images/Group.svg";
 import MapIcon from "../../Public/Images/MapIcon.svg";
 
 interface ItemStoreProps {
+   img: string;
    title: string;
-   subtitle: string;
-   data1: string;
-   data2: string;
+   address: string;
+   openTime: string;
+   sunestTime: string;
    rate: string;
    phone_number: string;
    repair_service: string;
    price: string;
 }
 
+function convertToIranianPrice(number: string): string {
+   const persianDigits = "۰۱۲۳۴۵۶۷۸۹";
+   const result = Math.trunc(Number(number) / 10);
+   const persianNumber = result.toString().replace(/\d/g, (d) => persianDigits[parseInt(d)]);
+   return persianNumber;
+}
+function convertRate(number: string): string {
+   const persianDigits = "۰۱۲۳۴۵۶۷۸۹";
+   const persianNumber = number.toString().replace(/\d/g, (d) => persianDigits[parseInt(d)]);
+   return persianNumber;
+}
+
+interface PhoneNumberDisplayProps {
+   phoneNumber: string;
+}
+
+const convertToIranianPhoneNumber = (phoneNumber: string): string => {
+   const persianDigits = "۰۱۲۳۴۵۶۷۸۹";
+   const convertDigits = (number: string): string =>
+      number.replace(/\d/g, (d) => persianDigits[parseInt(d)]);
+
+   if (phoneNumber.startsWith("+98")) {
+      return `+۹۸${convertDigits(phoneNumber.slice(3))}`;
+   } else if (phoneNumber.startsWith("09")) {
+      return `۰${convertDigits(phoneNumber.slice(1))}`;
+   } else {
+      return convertDigits(phoneNumber);
+   }
+};
+
+console.log(convertToIranianPhoneNumber("09359227339"));
+
 export default function ItemStore({
+   img,
    title,
-   subtitle,
-   data1,
-   data2,
+   address,
+   openTime,
+   sunestTime,
    phone_number,
    rate,
    repair_service,
@@ -34,7 +68,7 @@ export default function ItemStore({
             component="img"
             width="360px"
             height="180px"
-            image={CardImage}
+            image={img}
             alt="Bruce's Tire & Auto Service"
             sx={{ borderRadius: "5px" }}
          />
@@ -45,13 +79,13 @@ export default function ItemStore({
                </Typography>
                <Box component="div" display="flex" alignItems="center" gap={0.5}>
                   <Typography component="p" variant="h3" color="#424242" className="font-[18px]">
-                     {rate}
+                     {convertRate(rate)}
                   </Typography>
                   <Box component="img" src={Vector} sx={{ paddingBottom: "5px" }} />
                </Box>
             </Box>
             <Typography variant="body2" color="text.secondary" mb={0.5}>
-               {subtitle}
+               {address}
             </Typography>
             <Grid container spacing={1} alignItems="center" mb={0.5}>
                <Grid sx={{ display: "flex", alignItems: "center" }} item>
@@ -59,7 +93,7 @@ export default function ItemStore({
                </Grid>
                <Grid item>
                   <Typography variant="body2" color="text.secondary">
-                     {data1}
+                     {openTime}
                   </Typography>
                </Grid>
             </Grid>
@@ -69,7 +103,7 @@ export default function ItemStore({
                </Grid>
                <Grid item>
                   <Typography variant="body2" color="text.secondary">
-                     {data2}
+                     {sunestTime}
                   </Typography>
                </Grid>
             </Grid>
@@ -79,7 +113,9 @@ export default function ItemStore({
                </Grid>
                <Grid item>
                   <Typography variant="body2" color="text.secondary">
-                     {phone_number ? phone_number : "شماره همراه ندارد"}
+                     {phone_number
+                        ? convertToIranianPhoneNumber(phone_number)
+                        : "شماره همراهی ثبت نشده است"}
                   </Typography>
                </Grid>
             </Grid>
@@ -100,7 +136,7 @@ export default function ItemStore({
                      display="flex"
                      alignItems="center"
                      justifyContent="center">
-                     <Typography color="primary">{price}</Typography>
+                     <Typography color="primary">{convertToIranianPrice(price)}</Typography>
                      <Typography component="p" color="primary">
                         هزار تومان
                      </Typography>

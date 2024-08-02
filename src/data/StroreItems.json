@@ -1,24 +1,26 @@
-[
-   {
-      "img": "https://storage.googleapis.com/rp-production-public-content/gze1tat24mqrk2d95mhvp2l8a1oq",
-      "title": "سرویس تایر و خودرو لوکس",
-      "subtitle": "تهران اتوبان بسیج ، تهرانپارس ، خیابان دماوند شمالی",
-      "data1": "بسته است.شنبه از ساعت ۷ صبح",
-      "data2": "زودترین زمان در دسترس بودن ساعت ۸ صبح ۱۴ مهر",
-      "phone_number": "۰۹۱۲۴۳۲۹۰۹۴",
-      "rate": "۴.۳",
-      "repair_service": "تعویض دینام",
-      "price": "۲۵.۰۰۰"
-   },
-   {
-      "img": "https://storage.googleapis.com/rp-production-public-content/gze1tat24mqrk2d95mhvp2l8a1oq",
-      "title": "سرویس تایر و خودرو لوکس",
-      "subtitle": "تهران اتوبان بسیج ، تهرانپارس ، خیابان دماوند شمالی",
-      "data1": "بسته است.شنبه از ساعت ۷ صبح",
-      "data2": "زودترین زمان در دسترس بودن ساعت ۸ صبح ۱۴ مهر",
-      "phone_number": "۰۹۱۲۴۳۲۹۰۹۴",
-      "rate": "۴.۳",
-      "repair_service": "تعویض دینام",
-      "price": "۲۵.۰۰۰"
-   }
-]
+{
+   "CardDetails": [
+      {
+         "img": "../../Public/Images/CardImage.svg",
+         "title": "سرویس تایر و خودرو لوکس",
+         "address": "تهران اتوبان بسیج ، تهرانپارس ، خیابان دماوند شمالی",
+         "openTime": "بسته است.شنبه از ساعت ۷ صبح",
+         "sunestTime": "زودترین زمان در دسترس بودن ساعت ۸ صبح ۱۴ مهر",
+         "phone_number": "09123657420",
+         "rate": "4.3",
+         "repair_service": "تعویض دینام",
+         "price": "450000"
+      },
+      {
+         "img": "../../Public/Images/CardImage.svg",
+         "title": "سرویس تایر و خودرو لوکس",
+         "address": "تهران اتوبان بسیج ، تهرانپارس ، خیابان دماوند شمالی",
+         "openTime": "بسته است.شنبه از ساعت ۷ صبح",
+         "sunestTime": "زودترین زمان در دسترس بودن ساعت ۸ صبح ۱۴ مهر",
+         "phone_number": "09123657420",
+         "rate": "4.3",
+         "repair_service": "تعویض دینام",
+         "price": "450000"
+      }
+   ]
+}
