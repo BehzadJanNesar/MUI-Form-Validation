@@ -28,7 +28,16 @@ interface ItemStoreProps {
    price: string;
    loading: boolean;
 }
-
+const renderSkeleton = (width: string, height?: string) => (
+   <Skeleton
+      sx={{ borderRadius: "5px", backgroundColor: "#f1f1f1" }}
+      animation="wave"
+      variant="rectangular"
+      width={width}
+      height={height}
+      style={{ marginBottom: "5px" }}
+   />
+);
 export default function ItemStore({
    img,
    title,
@@ -44,13 +53,7 @@ export default function ItemStore({
    return (
       <Card sx={{ mt: 3, marginInline: "auto", padding: "30px", boxShadow: "unset" }}>
          {loading ? (
-            <Skeleton
-               sx={{ borderRadius: "5px", backgroundColor: "#f1f1f1" }}
-               animation="wave"
-               variant="rectangular"
-               width="100%"
-               height={180}
-            />
+            renderSkeleton("100%", "180px")
          ) : (
             <CardMedia
                component="img"
@@ -64,26 +67,14 @@ export default function ItemStore({
          <CardContent sx={{ padding: 0, marginTop: "10px", borderBottom: "1px solid #6C6C6C4A" }}>
             <Box display="flex" alignItems="center" justifyContent="space-between" mb={0.5}>
                {loading ? (
-                  <Skeleton
-                     sx={{ borderRadius: "5px", backgroundColor: "#f1f1f1" }}
-                     animation="wave"
-                     height={20}
-                     width="70%"
-                     style={{ marginBottom: "4px" }}
-                  />
+                  renderSkeleton("70%", "15px")
                ) : (
                   <Typography variant="h3" component="div">
                      {title}
                   </Typography>
                )}
                {loading ? (
-                  <Skeleton
-                     sx={{ borderRadius: "5px", backgroundColor: "#f1f1f1" }}
-                     animation="wave"
-                     height={20}
-                     width="20%"
-                     style={{ marginBottom: "4px" }}
-                  />
+                  renderSkeleton("20%", "15px")
                ) : (
                   <Box component="div" display="flex" alignItems="center" gap={0.5}>
                      <Typography component="p" variant="h3" color="#424242" className="font-[18px]">
@@ -94,26 +85,14 @@ export default function ItemStore({
                )}
             </Box>
             {loading ? (
-               <Skeleton
-                  sx={{ borderRadius: "5px", backgroundColor: "#f1f1f1" }}
-                  animation="wave"
-                  height={20}
-                  width="70%"
-                  style={{ marginBottom: "4px" }}
-               />
+               renderSkeleton("70%", "15px")
             ) : (
                <Typography variant="body2" color="text.secondary" mb={0.5}>
                   {address}
                </Typography>
             )}
             {loading ? (
-               <Skeleton
-                  sx={{ borderRadius: "5px", backgroundColor: "#f1f1f1" }}
-                  animation="wave"
-                  height={20}
-                  width="70%"
-                  style={{ marginBottom: "4px" }}
-               />
+               renderSkeleton("70%", "15px")
             ) : (
                <Grid container spacing={1} alignItems="center" mb={0.5}>
                   <Grid sx={{ display: "flex", alignItems: "center" }} item>
@@ -127,13 +106,7 @@ export default function ItemStore({
                </Grid>
             )}
             {loading ? (
-               <Skeleton
-                  sx={{ borderRadius: "5px", backgroundColor: "#f1f1f1" }}
-                  animation="wave"
-                  height={20}
-                  width="70%"
-                  style={{ marginBottom: "4px" }}
-               />
+               renderSkeleton("70%", "15px")
             ) : (
                <Grid container spacing={1} alignItems="center" mb={0.5}>
                   <Grid sx={{ display: "flex", alignItems: "center" }} item>
@@ -147,13 +120,7 @@ export default function ItemStore({
                </Grid>
             )}
             {loading ? (
-               <Skeleton
-                  sx={{ borderRadius: "5px", backgroundColor: "#f1f1f1" }}
-                  animation="wave"
-                  height={20}
-                  width="70%"
-                  style={{ marginBottom: "4px" }}
-               />
+               renderSkeleton("70%", "15px")
             ) : (
                <Grid container spacing={1} alignItems="center" mb={0.5}>
                   <Grid sx={{ display: "flex", alignItems: "center" }} item>
@@ -189,26 +156,14 @@ export default function ItemStore({
             </Grid> */}
             <Stack direction={"row-reverse"} spacing={1} sx={{ mt: 3 }}>
                {loading ? (
-                  <Skeleton
-                     sx={{ borderRadius: "5px", backgroundColor: "#f1f1f1" }}
-                     animation="wave"
-                     height={60}
-                     width="30%"
-                     style={{ marginBottom: "4px" }}
-                  />
+                  renderSkeleton("30%", "40px")
                ) : (
                   <Button sx={{ flex: 2 }} variant="outlined" color="primary" fullWidth>
                      <Box component="img" src={MapIcon} />
                   </Button>
                )}
                {loading ? (
-                  <Skeleton
-                     sx={{ borderRadius: "5px", backgroundColor: "#f1f1f1" }}
-                     animation="wave"
-                     height={60}
-                     width="90%"
-                     style={{ marginBottom: "4px" }}
-                  />
+                  renderSkeleton("90%", "40px")
                ) : (
                   <Button sx={{ flex: 10 }} variant="contained" color="primary" fullWidth>
                      بیشتر...
